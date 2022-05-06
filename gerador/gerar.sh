@@ -590,12 +590,12 @@ msg -bar
 echo -e "\033[1;37m ACTUALIZANDO......"
 msg -bar
 rm -rf $SCPT_DIR &>/dev/null
-wget https://raw.githubusercontent.com/NDsVPN/VPS-MX-8.0/main/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*
+wget https://raw.githubusercontent.com/sys-on/VPS-MX-8.0/main/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*
 sleep 3
 }
 
 pass_admin () {
-permited=$(ofus $(curl -sSL "https://raw.githubusercontent.com/NDsVPN/Generador_Gen_VPS-MX/main/passw"))
+permited=$(ofus $(curl -sSL "https://raw.githubusercontent.com/sys-on/Generador_Gen_VPS-MX/main/passw"))
 read -p "ESCRIBA SU CONTRASEÑA: " passw
 if [[ $permited = $passw ]]; then
 	clear
@@ -603,7 +603,7 @@ if [[ $permited = $passw ]]; then
 	echo -e "\033[1;37m ACTUALIZANDO......"
 	msg -bar
 	sleep 2
-	wget -O $HOME/instger.sh https://raw.githubusercontent.com/NDsVPN/Generador_Gen_VPS-MX/main/instgerador.sh &>/dev/null
+	wget -O $HOME/instger.sh https://raw.githubusercontent.com/sys-on/Generador_Gen_VPS-MX/main/instgerador.sh &>/dev/null
 	chmod +x $HOME/instger.sh
 	cd $HOME
 	rm -rf $SCPT_DIR &>/dev/null
@@ -626,7 +626,7 @@ if [[ $1 = 1 ]]; then
 msg -bar
 echo -e "\033[7;49;35m             LINKS INSTALL SCRIPT VPS•MX             "
 msg -bar
-echo -e "\033[1;37msudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/NDsVPN/VPS-MX-8.0/main/instalscript.sh &> /dev/null; chmod 777 instalscript.sh* && ./instalscript.sh*"
+echo -e "\033[1;37msudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/sys-on/VPS-MX-8.0/main/instalscript.sh &> /dev/null; chmod 777 instalscript.sh* && ./instalscript.sh*"
 msg -bar
 [[ $2 = 1 ]] && echo -ne "\033[1;37m Enter para Finalizar"
 [[ $2 = 1 ]] && read foo
@@ -634,14 +634,14 @@ elif [[ $1 = 2 ]]; then
 msg -bar
 echo -e "\033[7;49;35m             LINKS INSTALL SCRIPT GEN VPS•MX         "
 msg -bar
-echo -e "\033[1;37msudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/NDsVPN/VPS-MX-8.0/main/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*"
+echo -e "\033[1;37msudo apt update -y; apt upgrade -y; wget https://raw.githubusercontent.com/sys-on/VPS-MX-8.0/main/instgerador.sh &> /dev/null; chmod 777 instgerador.sh* && ./instgerador.sh*"
 msg -bar
 fi
 }
 
 bot_menu () {
 CIDdir=/etc/ADM-db && [[ ! -d ${CIDdir} ]] && mkdir ${CIDdir}
-[[ ! -e "${CIDdir}/confbot.sh" ]] && wget -O ${CIDdir}/confbot.sh https://raw.githubusercontent.com/NDsVPN/TeleBotGen/main/confbot.sh &> /dev/null && chmod +x ${CIDdir}/confbot.sh
+[[ ! -e "${CIDdir}/confbot.sh" ]] && wget -O ${CIDdir}/confbot.sh https://raw.githubusercontent.com/sys-on/TeleBotGen/main/confbot.sh &> /dev/null && chmod +x ${CIDdir}/confbot.sh
 sed -i -e 's/\r$//' ${CIDdir}/confbot.sh
 source ${CIDdir}/confbot.sh
 bot_conf
@@ -674,7 +674,7 @@ declare -A texto
 #local LINGUAGE=$(cat ${SCPidioma})
 [[ -z $LINGUAGE ]] && LINGUAGE=es
 [[ $LINGUAGE = "es" ]] && echo "$@" && return
-[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://raw.githubusercontent.com/NDsVPN/Herramientas/main/trans &> /dev/null
+[[ ! -e /usr/bin/trans ]] && wget -O /usr/bin/trans https://raw.githubusercontent.com/sys-on/Herramientas/main/trans &> /dev/null
 [[ ! -e /etc/texto-adm ]] && touch /etc/texto-adm
 source /etc/texto-adm
 if [[ -z "$(echo ${texto[$@]})" ]]; then
