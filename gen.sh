@@ -38,14 +38,14 @@ MIP2=$(wget -qO- ipv4.icanhazip.com)
 [[ "$MIP" != "$MIP2" ]] && IP="$MIP2" || IP="$MIP"
 }  
 function_verify () {
-  permited=$(curl -sSL "https://raw.githubusercontent.com/NDsVPN/Control/main/Control-IP")
+  permited=$(curl -sSL "https://raw.githubusercontent.com/sys-on/Control/main/Control-IP")
   [[ $(echo $permited|grep "${IP}") = "" ]] && {
   echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONATACTE A @NDs\n======================================================\n"
   [[ -d /etc/newadm ]] && rm -rf /etc/newadm
   exit 1
   } || {
   ### INTALAR VERCION DE SCRIPT
-  v1=$(curl -sSL "https://raw.githubusercontent.com/NDsVPN/VPS-MX-8.0/main/Vercion")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/sys-on/VPS-MX-8.0/main/Vercion")
   echo "$v1" > /etc/versin_script
   }
 }
