@@ -1,4 +1,4 @@
-# Gerador Chaves VPS-MX
+# Gerador De Chaves VPS-MX
 
 Gerador de chaves para instalar o gerador usando o link oficial
 
