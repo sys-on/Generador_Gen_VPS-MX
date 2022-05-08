@@ -6,7 +6,7 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 intallv2ray () {
 apt install python3-pip -y 
 source <(curl -sL https://raw.githubusercontent.com/sys-on/VPS-MX-8.0/main/ArchivosUtilitarios/V2RAY/install.sh)
-msg -ama "$(fun_trans "Intalado con Exito")!"
+msg -ama "$(fun_trans "Instalado com sucesso")!"
 }
 protocolv2ray () {
 msg -ama "$(fun_trans "Escojer opcion 3 y poner el dominio de nuestra IP")!"
